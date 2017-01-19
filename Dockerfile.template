@@ -8,4 +8,4 @@ ENV COUNTER 1
 
 COPY start.sh ./
 
-CMD set -e; ( flock -x -n 200 ; ./start.sh ) 200>/data/resin-updates.lock
+CMD ["bash", "start.sh"]
