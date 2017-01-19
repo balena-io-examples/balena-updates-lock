@@ -1,0 +1,11 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-debian
+
+WORKDIR /usr/src/app
+
+# For testing only.
+# Can update the env var and commit to trigger rebuild.
+ENV COUNTER 1
+
+COPY start.sh ./
+
+CMD set -e; ( flock -x -n 200 ; ./start.sh ) 200>/data/resin-updates.lock
