@@ -17,4 +17,4 @@ main () {
   flock -x -n 200
   main
 
-) 200>/data/resin-updates.lock
+) 200>/tmp/balena/updates.lock
